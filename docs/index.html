@@ -14,6 +14,64 @@
                     </dd>
                     <dt id="install">Installation</dt>
                     <dd id="installCorpus"></dd>
+                    <dt id="features">Features</dt>
+                    <dd>
+                        <dl class="heading4">
+                            <dt>
+                                class fastahold.Holder(data: Iterable = [])
+                            </dt>
+                            <dd>
+                                <p>
+                                    This class inherits from <code>datahold.OkayList</code>. Its items must be of the class <code><a href="#Record">Record</a></code>.
+                                </p>
+                            </dd>
+                            <dt id="Record">
+                                <ul>
+                                    <li>class fastahold.Record(other: Self)</li>
+                                    <li>class fastahold.Record(*, description: Any = "", seq: Any = "")</li>
+                                    <li>class fastahold.Record(*, bio: Bio.SeqRecord.SeqRecord)</li>
+                                    <li>class fastahold.Record(*, text: str)</li>
+                                </ul>
+                            </dt>
+                            <dd>
+                                <p>This class represents individual FASTA records.</p>
+                                <dl class="heading4">
+                                    <dt>bio</dt>
+                                    <dd>
+                                        <p>
+                                            This property holds a corresponding <code><a href="https://biopython.org/docs/1.75/api/Bio.SeqRecord.html#Bio.SeqRecord.SeqRecord">Bio.SeqRecord.SeqRecord</a></code>.
+                                        </p>
+                                    </dd>
+                                    <dt>copy() -> Self</dt>
+                                    <dd>
+                                        <p>
+                                            This method returns a copy of the current instance.
+                                        </p>
+                                    </dd>
+                                    <dt>description</dt>
+                                    <dd>
+                                        <p>This property represents the description of the record.</p>
+                                    </dd>
+                                    <dt>id</dt>
+                                    <dd>
+                                        <p>This property represents the id of the record.</p>
+                                    </dd>
+                                    <dt>seq</dt>
+                                    <dd>
+                                        <p>This property holds the seq of the record.</p>
+                                    </dd>
+                                    <dt>supplementary</dt>
+                                    <dd>
+                                        <p>This property holds the supplementary information of the record.</p>
+                                    </dd>
+                                    <dt>text</dt>
+                                    <dd>
+                                        <p>This property holds a <code>str</code> representation of the record.</p>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </dd>
                     <dt id="testing">Testing</dt>
                     <dd id="testingCorpus"></dd>
                     <dt id="license">License</dt>
