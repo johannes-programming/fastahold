@@ -1,2 +1,2 @@
-def main(args=None):
-    print("Hello World!")
+from fastahold.core.Holder import *
+from fastahold.core.Record import *
