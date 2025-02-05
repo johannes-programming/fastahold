@@ -6,6 +6,8 @@ from Bio.SeqRecord import SeqRecord
 from datarepr import datarepr
 from overloadable import overloadable
 
+from fastahold._utils import splitfiletext
+
 __all__ = ["Record"]
 
 
@@ -24,7 +26,7 @@ class Record:
         return "fields"
 
     @__init__.overload("other")
-    def __init__(self, other: "Record", /) -> None:
+    def __init__(self, other: Self, /) -> None:
         if not isinstance(other, type(self)):
             raise TypeError
         self.description = other.description
@@ -69,7 +71,7 @@ class Record:
     def bio(self) -> None:
         del self.text
 
-    def copy(self) -> "Record":
+    def copy(self) -> Self:
         "This method returns a copy of the current instance."
         return type(self)(self)
 
@@ -110,7 +112,7 @@ class Record:
     @seq.setter
     def seq(self, value: Any) -> None:
         seq = Seq(value)
-        seq = seq.replace("\n", "").replace("\r", "")
+        seq = seq.replace("\n", "").replace("\r", "").replace(" ", "")
         self._seq = seq
 
     @seq.deleter
@@ -144,14 +146,13 @@ class Record:
 
     @text.setter
     def text(self, value: Any) -> None:
-        code = str(value)
-        code = "\n" + code + "\n"
-        code = code.split("\n>")[-1]
-        code = code.split("\n", 1)
+        code: list[str] = splitfiletext(value)
+        code = code[-1].split("\n")
+        code = [x.rstrip() for x in code]
         description0 = self.description
-        self.description = code[0]
+        self.description = code.pop(0)
         try:
-            self.seq = code[1]
+            self.seq = "".join(code)
         except:
             self.description = description0
             raise
