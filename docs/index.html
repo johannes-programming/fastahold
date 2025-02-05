@@ -24,6 +24,44 @@
                                 <p>
                                     This class inherits from <code>datahold.OkayList</code>. Its items must be of the class <code><a href="#Record">Record</a></code>.
                                 </p>
+                                <dl class="heading4">
+                                    <dt>dump(self, stream:"BinaryIO") -> None</dt>
+                                    <dd>
+                                        <p>
+                                            This method dumps the current instance into a wb stream.
+                                        </p>
+                                    </dd>
+                                    <dt>dumpintofile(self, file:Any) -> None</dt>
+                                    <dd>
+                                        <p>
+                                            This method dumps the current instance into a file.
+                                        </p>
+                                    </dd>
+                                    <dt>dumps(self) -> str</dt>
+                                    <dd>
+                                        <p>
+                                            This method dumps the current instance as a string.
+                                        </p>
+                                    </dd>
+                                    <dt>load(cls, stream:"BinaryIO") -> Self</dt>
+                                    <dd>
+                                        <p>
+                                            This classmethod loads a new instance from an rb stream.
+                                        </p>
+                                    </dd>
+                                    <dt>loadfromfile(cls, file:Any) -> Self</dt>
+                                    <dd>
+                                        <p>
+                                            This classmethod loads a new instance from a file.
+                                        </p>
+                                    </dd>
+                                    <dt>loads(cls, string:Any) -> Self</dt>
+                                    <dd>
+                                        <p>
+                                            This classmethod loads a new instance from a string.
+                                        </p>
+                                    </dd>
+                                </dl>
                             </dd>
                             <dt id="Record">
                                 <ul>
