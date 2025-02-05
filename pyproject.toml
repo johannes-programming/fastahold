@@ -20,13 +20,14 @@ classifiers = [
 ]
 dependencies = [
     "Bio>=1.7.1",
+    "datahold>=1.1.8",
 ]
 description = "This project provides classes for the storing of FASTA data."
 keywords = []
 name = "fastahold"
 readme = "README.rst"
-requires-python = ">=3.8"
-version = "0.0.1.dev0+local"
+requires-python = ">=3.11"
+version = "0.0.1.dev0+local.1"
 
 [project.license]
 file = "LICENSE.txt"
