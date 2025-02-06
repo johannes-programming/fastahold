@@ -22,10 +22,10 @@ class Holder(OkayList):
     def data(self) -> None:
         self._data = list()
 
-    def dump(self, stream: "BinaryIO") -> None:
+    def dump(self, stream: BinaryIO) -> None:
         "This method dumps the current instance into a wb stream."
         for rec in self:
-            stream.write(rec.text.encode())
+            stream.write(rec.dumps().encode())
 
     def dumpintofile(self, file: Any) -> None:
         "This method dumps the current instance into a file."
@@ -36,11 +36,11 @@ class Holder(OkayList):
         "This method dumps the current instance as a string."
         ans = ""
         for rec in self:
-            ans += rec.text
+            ans += rec.dumps()
         return ans
 
     @classmethod
-    def load(cls, stream: "BinaryIO") -> Self:
+    def load(cls, stream: BinaryIO) -> Self:
         "This classmethod loads a new instance from an rb stream."
         text = stream.read().decode()
         ans = cls.loads(text)

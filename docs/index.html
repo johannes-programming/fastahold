@@ -25,37 +25,43 @@
                                     This class inherits from <code>datahold.OkayList</code>. Its items must be of the class <code><a href="#Record">Record</a></code>.
                                 </p>
                                 <dl class="heading4">
-                                    <dt>dump(self, stream:"BinaryIO") -> None</dt>
+                                    <dt>data</dt>
+                                    <dd>
+                                        <p>
+                                            This property holds a list of the items of the current instance.
+                                        </p>
+                                    </dd>
+                                    <dt>dump(stream:BinaryIO) -> None</dt>
                                     <dd>
                                         <p>
                                             This method dumps the current instance into a wb stream.
                                         </p>
                                     </dd>
-                                    <dt>dumpintofile(self, file:Any) -> None</dt>
+                                    <dt>dumpintofile(file:Any) -> None</dt>
                                     <dd>
                                         <p>
                                             This method dumps the current instance into a file.
                                         </p>
                                     </dd>
-                                    <dt>dumps(self) -> str</dt>
+                                    <dt>dumps() -> str</dt>
                                     <dd>
                                         <p>
                                             This method dumps the current instance as a string.
                                         </p>
                                     </dd>
-                                    <dt>load(cls, stream:"BinaryIO") -> Self</dt>
+                                    <dt>load(stream:BinaryIO) -> Self</dt>
                                     <dd>
                                         <p>
                                             This classmethod loads a new instance from an rb stream.
                                         </p>
                                     </dd>
-                                    <dt>loadfromfile(cls, file:Any) -> Self</dt>
+                                    <dt>loadfromfile(file:Any) -> Self</dt>
                                     <dd>
                                         <p>
                                             This classmethod loads a new instance from a file.
                                         </p>
                                     </dd>
-                                    <dt>loads(cls, string:Any) -> Self</dt>
+                                    <dt>loads(string:Any) -> Self</dt>
                                     <dd>
                                         <p>
                                             This classmethod loads a new instance from a string.
@@ -68,7 +74,6 @@
                                     <li>class fastahold.Record(other: Self)</li>
                                     <li>class fastahold.Record(*, description: Any = "", seq: Any = "")</li>
                                     <li>class fastahold.Record(*, bio: Bio.SeqRecord.SeqRecord)</li>
-                                    <li>class fastahold.Record(*, text: str)</li>
                                 </ul>
                             </dt>
                             <dd>
@@ -90,9 +95,19 @@
                                     <dd>
                                         <p>This property represents the description of the record.</p>
                                     </dd>
+                                    <dt>dumps() -> str</dt>
+                                    <dd>
+                                        <p>This method dumps the current instance as a string.</p>
+                                    </dd>
                                     <dt>id</dt>
                                     <dd>
                                         <p>This property represents the id of the record.</p>
+                                    </dd>
+                                    <dt>loads(string: Any) -> Self</dt>
+                                    <dd>
+                                        <p>
+                                            This classmethod loads a new instance from a string.
+                                        </p>
                                     </dd>
                                     <dt>seq</dt>
                                     <dd>
@@ -101,10 +116,6 @@
                                     <dt>supplementary</dt>
                                     <dd>
                                         <p>This property holds the supplementary information of the record.</p>
-                                    </dd>
-                                    <dt>text</dt>
-                                    <dd>
-                                        <p>This property holds a <code>str</code> representation of the record.</p>
                                     </dd>
                                 </dl>
                             </dd>
