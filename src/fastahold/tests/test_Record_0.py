@@ -15,7 +15,7 @@ class TestRecord(unittest.TestCase):
 
     def test_init_text(self):
         fasta_text = ">Test Description\nATGC"
-        record = Record(text=fasta_text)
+        record = Record.loads(fasta_text)
         self.assertEqual(record.description, "Test Description")
         self.assertEqual(str(record.seq), "ATGC")
 
@@ -24,7 +24,7 @@ class TestRecord(unittest.TestCase):
             Seq("ATGC"), id="TestID", description="Test Description"
         )
         record = Record(bio=bio_seq_record)
-        self.assertEqual(record.description, "Test Description")
+        self.assertEqual(record.description, "TestID Test Description")
         self.assertEqual(str(record.seq), "ATGC")
 
     def test_copy(self):
@@ -55,11 +55,10 @@ class TestRecord(unittest.TestCase):
     def test_text_property(self):
         record = Record(description="Test Description", seq="ATGC")
         expected_text = ">Test Description\nATGC\n"
-        self.assertEqual(record.text, expected_text)
+        self.assertEqual(record.dumps(), expected_text)
 
     def test_text_setter(self):
-        record = Record()
-        record.text = ">Test Description\nATGC"
+        record = Record.loads(">Test Description\nATGC")
         self.assertEqual(record.description, "Test Description")
         self.assertEqual(str(record.seq), "ATGC")
 
